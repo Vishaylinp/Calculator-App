@@ -3,43 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <table border="1">
-    </br>
         <tr>
             <td colspan="4">
-                <input type="text" id="inputBox" value="0" p>
+                <input type="text" id="inputBox" value="0">
             </td>
 
         </tr>
         <tr>
-            <td onclick="digitbtnPressed('7')">7</td>
-            <td onclick="digitbtnPressed('8')">8</td>
-            <td onclick="digitbtnPressed('9')">9</td>
-            <td ondblclick="" onclick="operatorbtnPressed('x')">x</td>
+            <td class="digitButton" onclick="digitbtnPressed('7')">7</td>
+            <td class="digitButton" onclick="digitbtnPressed('8')">8</td>
+            <td class="digitButton" onclick="digitbtnPressed('9')">9</td>
+            <td class ="operatorButton" onclick="operatorbtnPressed('x')">x</td>
         </tr>
         <tr >
-            <td onclick="digitbtnPressed('4')">4</td>
-            <td onclick="digitbtnPressed('5')">5</td>
-            <td onclick="digitbtnPressed('6')">6</td>
-            <td onclick="operatorbtnPressed('-')">-</td>
+            <td class="digitButton" onclick="digitbtnPressed('4')">4</td>
+            <td class="digitButton" onclick="digitbtnPressed('5')">5</td>
+            <td class="digitButton" onclick="digitbtnPressed('6')">6</td>
+            <td class="operatorButton" onclick="operatorbtnPressed('-')">-</td>
         </tr>
         <tr>
-            <td onclick="digitbtnPressed('1')">1</td>
-            <td onclick="digitbtnPressed('2')">2</td>
-            <td onclick="digitbtnPressed('3')">3</td>
-            <td onclick="operatorbtnPressed('+')">+</td>
+            <td class="digitButton" onclick="digitbtnPressed('1')">1</td>
+            <td class="digitButton" onclick="digitbtnPressed('2')">2</td>
+            <td class="digitButton" onclick="digitbtnPressed('3')">3</td>
+            <td class="operatorButton" onclick="operatorbtnPressed('+')">+</td>
         </tr>
         <tr>
-            <td colspan="2" onclick="digitbtnPressed('0')">0</td>
-            <td onclick="btnAcPressed()">AC</td>
-            <td onclick="operatorbtnPressed('/')">/</td>
+            <td class="digitButton" colspan="2" onclick="digitbtnPressed('0')">0</td>
+            <td class="acButton" onclick="btnAcPressed()">AC</td>
+            <td class="operatorButton" onclick="operatorbtnPressed('/')">/</td>
             
         </tr>
         <tr>
-            <td colspan="4" onclick="equalsbtnPressed()">=</td>
+            <td class="operatorButton" colspan="4" onclick="equalsbtnPressed()">=</td>
     </table>
     <script>
         var newLine = true; // Variable to track if a new line is being started
