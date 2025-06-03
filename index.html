@@ -18,24 +18,24 @@
             <td onclick="digitbtnPressed('7')">7</td>
             <td onclick="digitbtnPressed('8')">8</td>
             <td onclick="digitbtnPressed('9')">9</td>
-            <td onclick="digitbtnPressed('x')">x</td>
+            <td ondblclick="" onclick="operatorbtnPressed('*')">x</td>
         </tr>
         <tr >
             <td onclick="digitbtnPressed('4')">4</td>
             <td onclick="digitbtnPressed('5')">5</td>
             <td onclick="digitbtnPressed('6')">6</td>
-            <td onclick="digitbtnPressed('-')">-</td>
+            <td onclick="operatorbtnPressed('-')">-</td>
         </tr>
         <tr>
             <td onclick="digitbtnPressed('1')">1</td>
             <td onclick="digitbtnPressed('2')">2</td>
             <td onclick="digitbtnPressed('3')">3</td>
-            <td onclick="digitbtnPressed('+')">+</td>
+            <td onclick="operatorbtnPressed('+')">+</td>
         </tr>
         <tr>
             <td colspan="2" onclick="digitbtnPressed('0')">0</td>
             <td onclick="btnAcPressed()">AC</td>
-            <td onclick="digitbtnPressed('/')">/</td>
+            <td onclick="operatorbtnPressed('/')">/</td>
             
         </tr>
         <tr>
@@ -43,6 +43,8 @@
     </table>
     <script>
         var newLine = true; // Variable to track if a new line is being started
+        var currentOperator;
+        var Value1
 
         // Function to handle digit button presses
         function digitbtnPressed(button) {
@@ -56,10 +58,15 @@
         }
         // Function to handle the AC button press
         function btnAcPressed() {
-            document.getElementById("inputBox").value = "0";
+            document.getElementById("inputBox").value = 0;
             newLine = true; // Reset newLine to true when AC is pressed
         }
-
+        // Function to handle operator button presses
+        function operatorbtnPressed(operator) {
+            currentOperator = operator;
+            Value1 = parseInt(document.getElementById("inputBox").value);
+            newLine = true; 
+        }
     </script>
 
     
