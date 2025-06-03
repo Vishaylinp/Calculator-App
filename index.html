@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <td colspan="2" onclick="digitbtnPressed('0')">0</td>
-            <td>AC</td>
+            <td onclick="btnAcPressed()">AC</td>
             <td onclick="digitbtnPressed('/')">/</td>
             
         </tr>
@@ -42,7 +42,9 @@
             <td colspan="4">=</td>
     </table>
     <script>
-        var newLine = true;
+        var newLine = true; // Variable to track if a new line is being started
+
+        // Function to handle digit button presses
         function digitbtnPressed(button) {
             if (newLine) {
                 document.getElementById("inputBox").value = button;
@@ -51,8 +53,11 @@
                 var currentValue = document.getElementById("inputBox").value;
                 document.getElementById("inputBox").value = currentValue + button;
             }
-        
-
+        }
+        // Function to handle the AC button press
+        function btnAcPressed() {
+            document.getElementById("inputBox").value = "0";
+            newLine = true; // Reset newLine to true when AC is pressed
         }
 
     </script>
