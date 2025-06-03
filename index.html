@@ -15,34 +15,39 @@
 
         </tr>
         <tr>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
-            <td>x</td>
+            <td onclick="digitbtnPressed('7')">7</td>
+            <td onclick="digitbtnPressed('8')">8</td>
+            <td onclick="digitbtnPressed('9')">9</td>
+            <td onclick="digitbtnPressed('x')">x</td>
         </tr>
         <tr >
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>-</td>
+            <td onclick="digitbtnPressed('4')">4</td>
+            <td onclick="digitbtnPressed('5')">5</td>
+            <td onclick="digitbtnPressed('6')">6</td>
+            <td onclick="digitbtnPressed('-')">-</td>
         </tr>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>+</td>
+            <td onclick="digitbtnPressed('1')">1</td>
+            <td onclick="digitbtnPressed('2')">2</td>
+            <td onclick="digitbtnPressed('3')">3</td>
+            <td onclick="digitbtnPressed('+')">+</td>
         </tr>
         <tr>
-            <td colspan="2">0</td>
+            <td colspan="2" onclick="digitbtnPressed('0')">0</td>
             <td>AC</td>
-            <td>/</td>
+            <td onclick="digitbtnPressed('/')">/</td>
             
         </tr>
         <tr>
             <td colspan="4">=</td>
     </table>
     <script>
-        
+        function digitbtnPressed(button) {
+            var currentValue = document.getElementById("inputBox").value;
+            document.getElementById("inputBox").value = currentValue + button;
+
+        }
+
     </script>
 
     
