@@ -33,13 +33,17 @@
             <td class="operatorButton" onclick="operatorbtnPressed('+')">+</td>
         </tr>
         <tr>
-            <td class="digitButton" colspan="2" onclick="digitbtnPressed('0')">0</td>
+            <td class="digitButton" onclick="digitbtnPressed('0')">0</td>
             <td class="acButton" onclick="btnAcPressed()">AC</td>
+            <td class="operatorButton" onclick="operatorbtnPressed('**')">^</td>
             <td class="operatorButton" onclick="operatorbtnPressed('/')">/</td>
             
         </tr>
         <tr>
-            <td class="operatorButton" colspan="4" onclick="equalsbtnPressed()">=</td>
+            <td class="operatorButton"  onclick="equalsbtnPressed()">=</td>
+            <td class="operatorButton" onclick="squarebtnPressed()">x<sup>2</sup></td>
+            <td class="operatorButton" onclick="squareRootbtnPressed()">√</td>
+            <td class="operatorButton" onclick="operatorbtnPressed('%')">%</td>
     </table>
     <script>
         var newLine = true; // Variable to track if a new line is being started
@@ -67,6 +71,18 @@
             value1 = parseInt(document.getElementById("inputBox").value);
             newLine = true; 
         }
+        function squarebtnPressed() {
+            var value = parseFloat(document.getElementById("inputBox").value);
+            var total = value ** 2;
+            document.getElementById("inputBox").value = total;
+            newLine = true;
+        }
+        function squareRootbtnPressed() {
+            var value = parseFloat(document.getElementById("inputBox").value);
+            var total = Math.sqrt(value);
+            document.getElementById("inputBox").value = total;
+            newLine = true;
+        }
         // Function to handle the equals button press
         function equalsbtnPressed() {
             var value2 = parseInt(document.getElementById("inputBox").value);
@@ -85,11 +101,18 @@
                 case "/":
                     finalTotal = value1 / value2;
                     break;
+                case "**":
+                    finalTotal = value1 ** value2;
+                    break;
+                case "%":
+                    finalTotal = value1 % value2;
+                    break;
+                default:
+                    finalTotal = value2;
             }
             document.getElementById("inputBox").value = finalTotal;
             newLine = true;
         }
-
     </script>
 
     
